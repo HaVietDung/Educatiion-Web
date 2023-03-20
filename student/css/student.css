@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+:root{
+    --blue: #468acf;
+    --drak-blue: #1c78d4;
+    --rose: #ff4e68;
+    --rose-hover: #f33f5a;
+    --black: #444;
+    --border: 0.1rem solid rgba(0,0,0,0.1);
+    --border-hover: 0.1rem solid var(--black);
+    --box-shadow:0 0.5rem 1rem rgba(0,0,0,0.1);
+    --main-color: #027581;
+    --main-color-hover: #1a7f8a;
+    --color-dark: #1D2231;
+    --text-gray: #8390A2;
+    --border: 0.1rem solid rgba(0,0,0,0.1);
+    --border-hover: 0.1rem solid var(--black);
+    --box-shadow:0 0.5rem 1rem rgba(0,0,0,0.1);
+}
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border:none;
+    text-decoration: none;
+    transition: all .3s linear;
+    transition: width none;
+    list-style: none;
+}
+html{
+    font-size: 62.5%;
+}
+
+
+#sidebar-toggle{
+    display: none;
+}
+.sidebar{
+    height: 100%;
+    width: 24rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background: var(--main-color);
+    color: #fff;
+    overflow-y: auto;
+    transition: width 500ms;
+}
+.sidebar-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    margin-top: 1rem;
+}
+.sidebar .sidebar-header .brand span{
+    font-size: 2rem;
+}
+.sidebar .sidebar-header label{
+    font-size: 2rem;
+}
+.sidebar .sidebar-header label:hover{
+    cursor: pointer;
+}
+.sidebar a{
+    color: #fff;
+    font-size: 1.5rem;
+}
+.sidebar span:last-child{
+    padding-left: 1rem;
+}
+.sidebar .sidebar-menu ul li a span{
+    font-size: 1.7rem;
+}
+.sidebar .sidebar-menu ul li{
+    padding: 2rem;
+}
+.sidebar .sidebar-menu ul li:hover{
+    background-color: var(--main-color-hover);
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Dùng để kéo ra kéo vào */
+#sidebar-toggle:checked ~ .sidebar {
+    width: 60px;
+}
+
+#sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
+#sidebar-toggle:checked ~ .sidebar li span:last-child {
+    display: none;
+}
+
+#sidebar-toggle:checked ~ .sidebar .sidebar-header,
+#sidebar-toggle:checked ~ .sidebar li {
+    display: flex;
+    justify-content: center;
+}
+
+#sidebar-toggle:checked ~ .main-content {
+    margin-left: 60px;
+}
+
+#sidebar-toggle:checked ~ .main-content header {
+    left: 60px;
+    width: calc(100% - 60px);
+}
+
+.main-content{
+    position: relative;
+    margin-left: 24rem; 
+    transition: margin-left 500ms;
+}
+/* form index */
+.main-content header{ /*kính tìm kiếm, textbox,chuông, tin nhắn*/
+    position: fixed;
+    top: 0;
+    left: 24rem; /*độ rộng của menu*/
+    z-index: 100;
+    width: calc(100% - 24rem);
+    background: #fff;
+    padding: 0rem 2rem;
+    height: 6rem; /*chiều cao item là 60px*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    transition: left 500ms;
+}
+.search-wrapper{
+    display: flex;
+    align-items: center;
+}
+.search-wrapper span{
+    font-size: 1.7rem;
+}
+.search-wrapper span:hover{
+    cursor: pointer;
+}
+.search-wrapper input{
+    padding: 1rem;
+    font-size: 1.8rem;
+}
+.social-icons div img{
+    height: 4rem;
+    width: 4rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+.social-icons div img:hover{
+    cursor: pointer;
+}
+.main-content main {
+    margin-top: 6rem;
+    background: #f1f5f9;
+    min-height: 90vh;
+    padding: 1rem 3rem;
+    
+}
+
+.main-content main h2{
+    padding: 3rem;
+    font-size: 2rem;
+}
+
+.dash-cards img{
+    width: 23rem;
+    border-radius: 5px;
+}
+
+.main-content .card-single{
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    width: 50%;
+    margin-left: 45px;
+    margin-bottom: 20px;
+}
+.card-body{
+    padding: 1.5rem;
+}
+.card-body h3{
+     font-size: 1.5rem;
+     color: #f33f5a;
+}
+.card-footer{
+    border-top: 1px groove;
+    padding: 10px;
+}
+.card-footer a {
+    color: var(--main-color);
+    text-decoration: underline;
+    font-size: 1.7rem;
+    text-decoration: none;
+}
+
+/* form subject */
+.main-subject{
+    margin-top: 60px;
+}
+.main-subject .subject-name{
+    font-size: 35px;
+    padding: 2rem 0 2rem 2rem;
+}
+.main-subject .team a{
+   color: rgb(153, 126, 126);
+   font-size: 15px;
+   border: 1px solid;
+   margin: 5px 0 0 70%;
+}
+.homework-name{
+    border-top: 1.5px groove;
+    border-bottom: 1.5px groove;
+    width: 45%;
+    margin: 2rem 0 2rem 6rem;
+} 
+.homework-name #title{
+    font-size: 20px;
+    color: var(--rose);
+}
+.homework-name .body .date{
+    margin-left: 1rem;
+    color: rgb(170, 169, 169);
+    display: flex;
+}
+.homework-name .edit {
+    margin-left: 60px;
+}
+.homework-name .body .work a{
+    text-decoration: none;
+    color: var(--rose);
+    font-size: 15px;
+}
+/* from mark */
+.main-mark{
+    position: fixed;
+    margin-top: 60px;
+    z-index: 100;
+    width: calc(100% - 24rem);
+    background: #fff;
+    padding: 0rem 2rem;
+    align-items: center;
+    justify-content: space-between;
+    transition: left 500ms;
+}
+.main-mark h1{
+    font-size: 2.5rem;
+    padding: 3rem 2rem 0 2rem;
+}
+.table-mark{
+    width:100%;
+    
+}
+.table-mark tr{
+    background-color:  rgb(231, 255, 255);
+    border: solid;
+}
+.table-mark th {
+    padding: 15px;
+    float: left;
+    font-size: 1.5rem;
+}
+.table-mark td {
+    columns: 6;
+    padding: 15px;
+    font-size: 1.5rem;
+}
+.main-mark .date-mark{
+    display: flex;
+    margin-left:  2rem;
+}
+.date-mark .date{
+    margin-left: 0.5rem;
+    color: rgb(170, 169, 169);
+}
+.main-mark .box1{
+    margin-bottom: 4rem;
+}
+.table-mark a{
+    color: var(--rose);
+}
+.main-mark button{
+    background-color: white;
+    border: 1px solid;
+    padding: 6px;
+    margin: 10px;
+}
+.main-mark .btn{
+    margin-top: 15px;
+    margin-left: 3rem;  
+    border-radius: 5px; 
+}
+.main-mark .btn a{
+    color: var(--rose);
+}
+.add-mark{
+    position: fixed;
+    margin-top: 60px;
+    z-index: 100;
+    width: calc(100% - 24rem);
+    background: #fff;
+    padding: 0rem 2rem;
+    align-items: center;
+    justify-content: space-between;
+    transition: left 500ms;
+}
+/* form add-mark */
+.add-mark h1{
+    font-size: 2.5rem;
+    padding: 3rem 2rem 0 2rem;
+}
+.add-mark .date-mark{
+    display: flex;
+    margin-left:  2rem;
+}
+
+.upload{
+    display: flex;
+    margin: 35px 0 0 35px;
+}
+.upload p{
+    font-size: 15px;
+    padding-right: 5px;
+}
+.btn-add button{
+    width: 7rem;   
+    height: 3.5rem;
+    margin: 25px 0 0 35px;
+    border-radius: 7px;
+    background-color: white;
+    border: 1px solid var(--main-color);
+}
+/* form dk btl */
+.main-project{
+    margin-top: 6rem;
+    background: #f1f5f9;
+    min-height: 90vh;
+    padding: 1rem 3rem;
+}
+.main-project label{
+    font-size: 15px;
+    padding-right: 5px;
+}
+.main-project .form-group{
+    margin: 20px 0 0 20px;
+}
+.main-project input{
+    width: 250px;
+    height: 25px;   
+}
+.main-project input{ 
+    border: 1px solid rgb(170, 169, 169);
+}
+.main-project button{
+    padding: 7px;
+    margin-right: 30px;
+    border: 1px solid;
+    background-color: white;
+}
+.main-project button a{
+    color: black;
+}
